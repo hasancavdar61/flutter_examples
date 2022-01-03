@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sociaworld/widgets/custom_bottom_nav_bar.dart';
 import 'package:sociaworld/widgets/custom_card_widget.dart';
 import 'package:sociaworld/widgets/custom_profile_card.dart';
-import 'package:sociaworld/widgets/custon_fab.dart';
+import 'package:sociaworld/widgets/custom_profile_card_other.dart';
 
 class CustomCardView extends StatelessWidget {
   const CustomCardView({Key? key}) : super(key: key);
@@ -15,11 +15,6 @@ class CustomCardView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter Examples'),
       ),
-      floatingActionButton: CenterFAB(
-        iconFAB: Icons.add,
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: const CustomBottomNavBar(
         bottomNavBarItem: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Main'),
@@ -41,18 +36,23 @@ class CustomCardView extends StatelessWidget {
               buttonFunctionTwo: () {},
               iconData: Icons.cancel,
             ),
-
-            //
             const CustomProfileCard(
               departmentColor: Colors.deepPurple,
               profilePhoto: 'assets/hsncvdr.jpg',
               departmentIconColor: Colors.black87,
-              departmentLabel: 'HÇ',
+              departmentLabel: 'MD',
               departmentLabelColor: Colors.white,
               name: 'Hasan',
               surname: 'Çavdar',
               departmentName: 'Management Department',
             ),
+            const ProfileCardOther(
+              profilePhoto: 'assets/hsncvdr.jpg',
+              name: 'Hasan',
+              surname: 'Çavdar',
+              departmentIcon: Icons.account_tree_rounded,
+              departmentName: 'Management Department',
+            )
           ],
         ),
       ),

@@ -8,7 +8,7 @@ class CustomBottomNavBar extends StatelessWidget {
   }) : super(key: key);
 
   final List<BottomNavigationBarItem>? bottomNavBarItem;
-
+//BottomNavigationBar [items] listesi [bottomNavBarItem] şeklinde kullanılmıştır.
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(items: bottomNavBarItem!);

@@ -12,7 +12,7 @@ class CustomProfileCard extends StatelessWidget {
     this.surname,
     this.departmentName,
   }) : super(key: key);
-
+// [final] modifier ve type'lar NullSafety ile kullanılmıştır.
   final Color? departmentColor;
   final String? profilePhoto;
   final Color? departmentIconColor;
@@ -34,8 +34,8 @@ class CustomProfileCard extends StatelessWidget {
       //Alt alta sıralama için [Column] kullanılmıştır.
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        
-        //Departman rengi, ikonu ve profil fotoğrafının bulunduğu widget [Container]
+
+        //Departman rengi[departmentColor], ikonu ve profil fotoğrafının bulunduğu widget [Container]
         children: [
           Container(
             padding: const EdgeInsets.all(10),
@@ -43,7 +43,7 @@ class CustomProfileCard extends StatelessWidget {
             color: departmentColor!,
             width: double.infinity,
 
-            //Departman ikonu ve profil fotoğrafının bulunduğu widget [Stack]
+            //profil fotoğrafının [profilePhoto], bulunduğu widget [Stack]
             child: Stack(
               alignment: AlignmentDirectional.topEnd,
               children: [
@@ -60,7 +60,7 @@ class CustomProfileCard extends StatelessWidget {
                   ),
                 ),
 
-                // Departman ikonunun bulunduğu widget [Container]
+                // Departman ikon rengi [departmentIconColor], departman border rengi [departmentColor], departman adı [departmentLabel], departman adının rengi [departmantLabelColor]
                 Container(
                   padding: const EdgeInsets.only(
                       left: 15.0, right: 15.0, top: 5.0, bottom: 5.0),
@@ -80,7 +80,7 @@ class CustomProfileCard extends StatelessWidget {
               ],
             ),
           ),
-          //İsim, soyisim ve bulunduğu departman adını içeren [ListTile]
+          //İsim [name], soyisim [surname], departman adının [deparmentName] bulunduğu widget [ListTile]
           ListTile(
             title: Text(name!),
             subtitle: Text(surname!),
