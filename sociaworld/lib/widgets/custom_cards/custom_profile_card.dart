@@ -39,19 +39,19 @@ class CustomProfileCard extends StatelessWidget {
 
         //Departman rengi[departmentColor], ikonu ve profil fotoğrafının bulunduğu widget [Container]
         children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            alignment: Alignment.center,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              // Background Image
-              image: AssetImage('assets/card_background.png'),
-              fit: BoxFit.fill,
-            )),
-            //profil fotoğrafının [profilePhoto], bulunduğu widget [Stack]
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 0.0),
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 5.0),
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              alignment: Alignment.center,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                // Background Image
+                image: AssetImage('assets/card_background.png'),
+                fit: BoxFit.fill,
+              )),
+              //profil fotoğrafının [profilePhoto], bulunduğu widget [Stack]
               child: Stack(
                 alignment: AlignmentDirectional.topEnd,
                 children: [
