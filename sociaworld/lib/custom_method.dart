@@ -15,7 +15,6 @@ class CustomCardView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter Examples'),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

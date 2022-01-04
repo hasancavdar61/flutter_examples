@@ -13,10 +13,22 @@ class _SplashBlurBackgroundState extends State<SplashBlurBackground> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/splash_background.jpg'))),
-        child:
-            BackdropFilter(filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 2.0)));
+      height: MediaQuery.of(context).size.height,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: AssetImage('assets/splash_background.jpg'),
+        ),
+      ),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 3.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black.withOpacity(0.090),
+          ),
+        ),
+      ),
+    );
   }
 }

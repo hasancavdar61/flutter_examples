@@ -15,7 +15,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   Widget build(BuildContext context) {
     return const SplashBodyWidget(
         splashHeaderText: 'Hoş Geldin!',
-        splashHeaderSubText: 'Sizler için pahabiçilmez bir uygulamamız var.',
+        splashHeaderSubText: 'Sizler için paha biçilmez bir uygulamamız var.',
         splashButtonLabel: 'Başla');
   }
 }

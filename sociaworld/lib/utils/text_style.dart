@@ -4,7 +4,7 @@ class SplashTextStyle {
   TextStyle bold() {
     return const TextStyle(
       fontWeight: FontWeight.bold,
-      fontSize: 24,
+      fontSize: 40,
       color: Colors.white,
     );
   }
