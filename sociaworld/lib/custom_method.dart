@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sociaworld/widgets/custom_bottom_nav_bar.dart';
 import 'package:sociaworld/widgets/custom_card_widget.dart';
 import 'package:sociaworld/widgets/custom_cards/custom_profile_card.dart';
 import 'package:sociaworld/widgets/custom_cards/custom_profile_card_other.dart';
