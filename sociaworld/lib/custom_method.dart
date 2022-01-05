@@ -21,12 +21,14 @@ class CustomCardView extends StatelessWidget {
             CustomCardWidget(
               borderRadius: BorderRadius.circular(10.0),
               imageUrl: imageUrl,
-              listTitle: 'image',
-              listSubtitle: 'image subtitle',
-              buttonTextOne: 'Yes',
-              buttonFunctionOne: () {},
-              buttonTextTwo: 'No',
-              buttonFunctionTwo: () {},
+              listTitle: 'Splash Screen Works Here',
+              listSubtitle: 'Select one and go to design.',
+              buttonTextOne: 'Health',
+              buttonFunctionOne: () =>
+                  Navigator.pushNamed(context, '/HomePage'),
+              buttonTextTwo: 'AI',
+              buttonFunctionTwo: () =>
+                  Navigator.pushNamed(context, '/SplashVariantOne'),
               iconData: Icons.cancel,
             ),
             const CustomProfileCard(

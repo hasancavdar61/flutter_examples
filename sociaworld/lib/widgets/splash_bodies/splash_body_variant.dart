@@ -76,6 +76,7 @@ class SplashBodyVariantWidget extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(right: 28.0, bottom: 25.0),
                 child: FloatingActionButton.extended(
+                  heroTag: 'hello',
                   elevation: 8.0,
                   backgroundColor: colorFAB!,
                   onPressed: onPressed!,

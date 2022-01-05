@@ -40,7 +40,7 @@ class CustomProfileCard extends StatelessWidget {
         //Departman rengi[departmentColor], ikonu ve profil fotoğrafının bulunduğu widget [Container]
         children: [
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 5.0),
+            filter: ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
             child: Container(
               padding: const EdgeInsets.all(10),
               alignment: Alignment.center,

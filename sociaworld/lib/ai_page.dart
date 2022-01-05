@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HealthPage extends StatelessWidget {
-  const HealthPage({Key? key}) : super(key: key);
+class AIPage extends StatelessWidget {
+  const AIPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
