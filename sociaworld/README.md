@@ -7,4 +7,8 @@ A new Flutter project.
 This repository for Flutter Lessons.
 Flutter works, samples and homeworks.
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![]https://ibb.co/YtzBBDj
+https://ibb.co/mXqf9vV
+https://ibb.co/S5FrQxk
+https://ibb.co/TDQ87FM
+https://ibb.co/SmW07PC
