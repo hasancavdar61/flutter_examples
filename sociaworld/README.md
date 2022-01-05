@@ -6,3 +6,5 @@ A new Flutter project.
 
 This repository for Flutter Lessons.
 Flutter works, samples and homeworks.
+
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
