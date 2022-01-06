@@ -1,0 +1,7 @@
+{
+    "helloWorld": "Hello World!",
+    "assetImageUrl":"assets/image/",
+    "@helloWorld": {
+      "description": "The conventional newborn programmer greeting"
+    }
+}

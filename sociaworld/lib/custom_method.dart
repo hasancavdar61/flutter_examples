@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sociaworld/utils/statics.dart';
 import 'package:sociaworld/widgets/custom_card_widget.dart';
 import 'package:sociaworld/widgets/custom_cards/custom_profile_card.dart';
 import 'package:sociaworld/widgets/custom_cards/custom_profile_card_other.dart';
 
 class CustomCardView extends StatelessWidget {
   const CustomCardView({Key? key}) : super(key: key);
-  static const String imageUrl =
-      'https://btkcampus.com.tr/files/mobil_dev./ios_gelistirme_dev.jpg';
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +19,13 @@ class CustomCardView extends StatelessWidget {
           children: [
             CustomCardWidget(
               borderRadius: BorderRadius.circular(10.0),
-              imageUrl: imageUrl,
+              imageUrl: ImageUrls.mainCardImage,
               listTitle: 'Splash Screen Works Here',
               listSubtitle: 'Select one and go to design.',
               buttonTextOne: 'Health',
-              buttonFunctionOne: () =>
-                  Navigator.pushNamed(context, '/HomePage'),
+              namedRouteOne: '/HomePage',
               buttonTextTwo: 'AI',
-              buttonFunctionTwo: () =>
-                  Navigator.pushNamed(context, '/SplashVariantOne'),
+              namedRouteTwo: '/SplashVariantOne',
               iconData: Icons.cancel,
             ),
             const CustomProfileCard(
