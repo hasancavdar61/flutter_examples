@@ -1,3 +1,6 @@
+// ignore_for_file: unnecessary_const
+
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sociaworld/widgets/splash_backgrounds/splash_background_variant.dart';
@@ -46,28 +49,31 @@ class SplashBodyVariantWidget extends StatelessWidget {
               height: 10.0,
             ),
             SafeArea(
-              child: RichText(
-                textAlign: TextAlign.start,
-                text: TextSpan(
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: splashHeaderText!,
-                      style: GoogleFonts.aBeeZee(fontSize: 18.0),
-                    ),
-                    const TextSpan(text: '\n'),
-                    TextSpan(
-                      text: splashMainText!,
-                      style: GoogleFonts.fredokaOne(
-                        fontSize: fontSize!,
-                        fontWeight: FontWeight.w600,
+              child: DelayedDisplay(
+                delay: const Duration(seconds: 1),
+                child: RichText(
+                  textAlign: TextAlign.start,
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: splashHeaderText!,
+                        style: GoogleFonts.aBeeZee(fontSize: 18.0),
                       ),
-                    ),
-                    const TextSpan(text: '\n'),
-                    TextSpan(
-                      text: splashSubText!,
-                      style: GoogleFonts.aBeeZee(fontSize: subTextSize!),
-                    ),
-                  ],
+                      const TextSpan(text: '\n'),
+                      TextSpan(
+                        text: splashMainText!,
+                        style: GoogleFonts.fredokaOne(
+                          fontSize: fontSize!,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const TextSpan(text: '\n'),
+                      TextSpan(
+                        text: splashSubText!,
+                        style: GoogleFonts.aBeeZee(fontSize: subTextSize!),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -84,7 +90,7 @@ class SplashBodyVariantWidget extends StatelessWidget {
                   icon: const Icon(Icons.arrow_forward),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ],
