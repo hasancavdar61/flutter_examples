@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
-
 class CustomCardWidget extends StatelessWidget {
   const CustomCardWidget({
     Key? key,
     required this.imageUrl,
-    this.buttonFunctionOne,
-    this.buttonFunctionTwo,
     this.buttonTextOne,
     this.buttonTextTwo,
     this.iconData,
     this.listSubtitle,
     this.listTitle,
     this.borderRadius,
+    this.namedRouteOne,
+    this.namedRouteTwo,
   }) : super(key: key);
 
   final BorderRadiusGeometry? borderRadius;
@@ -20,9 +19,9 @@ class CustomCardWidget extends StatelessWidget {
   final String? listTitle;
   final String? listSubtitle;
   final String? buttonTextOne;
-  final VoidCallback? buttonFunctionOne;
+  final String? namedRouteOne;
   final String? buttonTextTwo;
-  final VoidCallback? buttonFunctionTwo;
+  final String? namedRouteTwo;
   final IconData? iconData;
 
   @override
@@ -54,11 +53,11 @@ class CustomCardWidget extends StatelessWidget {
               alignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: buttonFunctionOne,
+                  onPressed: () => Navigator.pushNamed(context, namedRouteOne!),
                   child: Text(buttonTextOne!),
                 ),
                 ElevatedButton(
-                  onPressed: buttonFunctionTwo,
+                  onPressed: () => Navigator.pushNamed(context, namedRouteTwo!),
                   child: Text(buttonTextTwo!),
                 ),
               ],
