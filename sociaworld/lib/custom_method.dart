@@ -3,6 +3,7 @@ import 'package:sociaworld/utils/statics.dart';
 import 'package:sociaworld/widgets/custom_card_widget.dart';
 import 'package:sociaworld/widgets/custom_cards/custom_profile_card.dart';
 import 'package:sociaworld/widgets/custom_cards/custom_profile_card_other.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CustomCardView extends StatelessWidget {
   const CustomCardView({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class CustomCardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Examples'),
+        title: Text(AppLocalizations.of(context)!.helloWorld),
       ),
       body: SingleChildScrollView(
         child: Column(

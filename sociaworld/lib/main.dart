@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sociaworld/routes/local_service.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -15,18 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // L10N
 
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [
-        Locale('tr', ''),
-      ],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
 
       debugShowCheckedModeBanner: false,
-      title: AppLocalizations.of(context)!.helloWorld,
+      title: 'proje',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
