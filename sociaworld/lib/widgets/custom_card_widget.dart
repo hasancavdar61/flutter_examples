@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomCardWidget extends StatelessWidget {
   const CustomCardWidget({
@@ -53,11 +54,11 @@ class CustomCardWidget extends StatelessWidget {
               alignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, namedRouteOne!),
+                  onPressed: () => Get.toNamed(namedRouteOne!),
                   child: Text(buttonTextOne!),
                 ),
                 ElevatedButton(
-                  onPressed: () => Navigator.pushNamed(context, namedRouteTwo!),
+                  onPressed: () => Get.toNamed(namedRouteTwo!),
                   child: Text(buttonTextTwo!),
                 ),
               ],

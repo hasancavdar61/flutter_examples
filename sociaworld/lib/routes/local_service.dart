@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:sociaworld/ai_page.dart';
 import 'package:sociaworld/custom_method.dart';
 import 'package:sociaworld/health_page.dart';
@@ -25,4 +26,25 @@ class RouteServices {
 class NavShorts {
   Future<Object?> named(BuildContext context, String root) =>
       Navigator.pushNamed(context, root);
+}
+
+class GetRouteService {
+  get routesGet => {
+        gettingRoutes('/', const CustomCardView()),
+        gettingRoutes('/HomePage', const SplashScreenVariantOne()),
+        gettingRoutes('/SplashSecond', const SecondScreen()),
+        gettingRoutes('/SplashThird', const ThirdScreen()),
+        gettingRoutes('/SplashFourth', const FourthScreen()),
+        gettingRoutes('/SplashFifth', const FifthScreen()),
+        gettingRoutes('/HealthPage', const HealthPage()),
+        gettingRoutes('/SplashVariantOne', const SplashScreenBodyVariantTwo()),
+        gettingRoutes('/SplashVariantTwo', const VariantScreenTwo()),
+        gettingRoutes('/SplashVariantThree', const VariantScreenThree()),
+        gettingRoutes('/AIPage', const AIPage()),
+      };
+
+  GetPage<GetPage> gettingRoutes(String name, Widget pageGetter) => GetPage(
+        name: name,
+        page: () => pageGetter,
+      );
 }

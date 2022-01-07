@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AIPage extends StatelessWidget {
   const AIPage({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class AIPage extends StatelessWidget {
       child: Hero(
         tag: 'go',
         child: ElevatedButton(
-          onPressed: () => Navigator.pushNamed(context, '/'),
+          onPressed: () => Get.offAllNamed('/'),
           child: const Text('Go Home'),
         ),
       ),
