@@ -62,7 +62,6 @@ class _SubScreenOneWidgetState extends State<SubScreenOneWidget> {
                             // Retrieve the text the that user has entered by using the
                             // TextEditingController.
                             content: const Text('Your data has been sent..'));
-                        dispose();
                       },
                     );
                     await Future.delayed(const Duration(seconds: 2));
