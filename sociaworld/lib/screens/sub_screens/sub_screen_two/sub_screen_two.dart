@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:sociaworld/widgets/bottom_app_bar.dart';
 import 'package:sociaworld/widgets/sub_screen_widget.dart';
 
 class SubScreenTwo extends StatelessWidget {
-  const SubScreenTwo({Key? key}) : super(key: key);
+  const SubScreenTwo({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomAppBar(
-          elevation: 6,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              TextButton(
-                onPressed: () => Get.toNamed('/RustemScreenOne'),
-                child: const Text('RustemScreenOne'),
-              ),
-              TextButton(
-                onPressed: () => Get.toNamed('/RustemScreenTwo'),
-                child: const Text('RustemScreenTwo'),
-              ),
-            ],
-          ),
-        ),
-        body: SubScreenOneWidget());
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: const BottomAppBarWidget(
+        rustemText: 'RustemScreenOne',
+        rustemTextTwo: 'RustemScreenTwo',
+        goToRustem: 'RustemScreenOne',
+        goToRustemTwo: 'RustemScreenTwo',
+      ),
+      body: SubScreenOneWidget(
+        labelText: 'Send Data...',
+        buttonLabel: 'Submit',
+        dialogText: 'Data sending...',
+        returnText: 'free',
+      ),
+    );
   }
 }
