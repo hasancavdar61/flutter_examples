@@ -1,53 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sociaworld/widgets/sub_screen_widget.dart';
 
 class SubScreenOne extends StatefulWidget {
-  SubScreenOne({
+  const SubScreenOne({
     Key? key,
   }) : super(key: key);
 
   @override
   State<SubScreenOne> createState() => _SubScreenOneState();
-  final myController = TextEditingController();
 }
 
 class _SubScreenOneState extends State<SubScreenOne> {
-  final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        margin: const EdgeInsets.all(25.0),
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: widget.myController,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Lütfen boş bırakmayın';
-                      }
-                      return null;
-                    },
-                  ),
-                  ElevatedButton(
-                    child: const Text('Submit'),
-                    onPressed: () => _formKey.currentState!.validate()
-                        ? Get.offAllNamed('/',
-                            arguments: widget.myController.text)
-                        : const Text('cavdar'),
-                  ),
-                ],
+    return Scaffold(
+        bottomNavigationBar: BottomAppBar(
+          elevation: 6,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextButton(
+                onPressed: () => Get.toNamed('/RustemScreenOne'),
+                child: const Text('RustemScreenOne'),
               ),
-            ),
-          ],
+              TextButton(
+                onPressed: () => Get.toNamed('/RustemScreenTwo'),
+                child: const Text('RustemScreenTwo'),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+        body: SubScreenOneWidget());
   }
 }
+
+

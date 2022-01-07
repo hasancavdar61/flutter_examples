@@ -9,6 +9,8 @@ import 'package:sociaworld/health_page.dart';
 import 'package:sociaworld/screens/splash/splash_variant_one/body.dart';
 import 'package:sociaworld/screens/splash/splash_variant_one/splash_screen.dart';
 import 'package:sociaworld/screens/splash/splash_variant_two/body.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_one/sub_rustem_one/sub_rustem_one.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_one/sub_rustem_one/sub_rustem_one_sec.dart';
 import 'package:sociaworld/screens/sub_screens/sub_screen_one/sub_screen_one.dart';
 import 'package:sociaworld/screens/sub_screens/sub_screen_three/sub_screen_three.dart';
 import 'package:sociaworld/screens/sub_screens/sub_screen_two/sub_screen_two.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/SubScreenOne', page: () => SubScreenOne()),
         GetPage(name: '/SubScreenTwo', page: () => SubScreenTwo()),
         GetPage(name: '/SubScreenThree', page: () => SubScreenThree()),
+        GetPage(name: '/RustemScreenOne', page: () => RustemScreenOne()),
+        GetPage(name: '/RustemScreenTwo', page: () => RustemScreenTwo()),
       ],
 
       // L10N
