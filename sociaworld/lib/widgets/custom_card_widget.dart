@@ -63,6 +63,23 @@ class CustomCardWidget extends StatelessWidget {
                 ),
               ],
             ),
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () => Get.toNamed('/SubScreenOne'),
+                  child: const Text('ScreenOne'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Get.toNamed('/SubScreenTwo'),
+                  child: const Text('ScreenTwo'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Get.toNamed('/SubScreenThree'),
+                  child: const Text('ScreenThree'),
+                ),
+              ],
+            ),
             IconButton(
               onPressed: () {},
               icon: Icon(iconData),

@@ -6,6 +6,7 @@ import 'package:sociaworld/health_page.dart';
 import 'package:sociaworld/screens/splash/splash_variant_one/body.dart';
 import 'package:sociaworld/screens/splash/splash_variant_one/splash_screen.dart';
 import 'package:sociaworld/screens/splash/splash_variant_two/body.dart';
+import 'package:get/get.dart';
 
 class RouteServices {
   Map<String, WidgetBuilder> get routes => {
@@ -29,7 +30,7 @@ class NavShorts {
 }
 
 class GetRouteService {
-  get routesGet => {
+  get routesGett => {
         gettingRoutes('/', const CustomCardView()),
         gettingRoutes('/HomePage', const SplashScreenVariantOne()),
         gettingRoutes('/SplashSecond', const SecondScreen()),
@@ -43,8 +44,13 @@ class GetRouteService {
         gettingRoutes('/AIPage', const AIPage()),
       };
 
-  GetPage<GetPage> gettingRoutes(String name, Widget pageGetter) => GetPage(
+  GetPage<dynamic> gettingRoutes(String name, Widget pageGetter) => GetPage(
         name: name,
         page: () => pageGetter,
       );
 }
+
+GetPage<dynamic> routesGet() {
+  return GetPage(name: '/', page: ()=> const SecondScreen());
+}
+
