@@ -113,7 +113,7 @@ class ClinicsRowWidgets extends StatelessWidget {
   final List<String> routesImages = [
     'assets/baby.png',
     'assets/brain.png',
-    'assets/coronavius.png',
+    'assets/coronavirus.png',
     'assets/heart.png'
   ];
 
@@ -125,13 +125,13 @@ class ClinicsRowWidgets extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         children: [
           CustomGestureDetector(
+              routes: routes, index: 0, routesImages: routesImages),
+          CustomGestureDetector(
               routes: routes, index: 1, routesImages: routesImages),
           CustomGestureDetector(
               routes: routes, index: 2, routesImages: routesImages),
           CustomGestureDetector(
               routes: routes, index: 3, routesImages: routesImages),
-          CustomGestureDetector(
-              routes: routes, index: 4, routesImages: routesImages),
         ],
       ),
     );
@@ -152,12 +152,15 @@ class CustomGestureDetector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Get.toNamed(routes[index!]),
-      child: CircleAvatar(
-        radius: 30,
-        backgroundColor: Colors.white,
-        backgroundImage: AssetImage(routesImages[index!]),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () => Get.toNamed(routes[index!]),
+        child: CircleAvatar(
+          radius: 30,
+          backgroundColor: Colors.white,
+          backgroundImage: AssetImage(routesImages[index!]),
+        ),
       ),
     );
   }
