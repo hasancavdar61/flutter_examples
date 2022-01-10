@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:health_app/utils/statics.dart';
 import 'package:health_app/widgets/clinic_text_widget.dart';
 import 'package:health_app/widgets/custom_card.dart';
 import 'package:health_app/widgets/user_welcome_widget.dart';
@@ -31,8 +32,32 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 width: double.infinity,
               ),
             ),
-            ClinicsRowWidgets(),
-            const ClinicTextWidget(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: clinicsRowWidgets(),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: ClinicTextWidget(),
+            ),
+            SizedBox(
+              height: 300,
+              width: double.infinity,
+              child: ListView.builder(
+                itemCount: 1,
+                itemBuilder: (BuildContext context, int index) {
+                  return ProfileCardOther(
+                    onTap: () => Get.toNamed('/DetailPage'),
+                    mainIcon: 'baby.png',
+                    name: 'Baby',
+                    surname: 'Health',
+                    departmentIcon: Icons.ac_unit_outlined,
+                    departmentName: 'For your baby',
+                    lastColor: const Color(0xFF8135A4),
+                  );
+                },
+              ),
+            ),
 
             // ! BUİLDER İLE SARILACAK
             ProfileCardOther(
@@ -94,73 +119,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       ),
     );
   }
-}
 
-class ClinicsRowWidgets extends StatelessWidget {
-  ClinicsRowWidgets({
-    Key? key,
-    this.selected,
-  }) : super(key: key);
-
-  final int? selected;
-
-  final List<String> routes = [
-    '/DetailPage',
-    '/DetailPageTwo',
-    '/DEtailPageThree',
-    '/DetailPageFour'
-  ];
-  final List<String> routesImages = [
-    'assets/baby.png',
-    'assets/brain.png',
-    'assets/coronavirus.png',
-    'assets/heart.png'
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          CustomGestureDetector(
-              routes: routes, index: 0, routesImages: routesImages),
-          CustomGestureDetector(
-              routes: routes, index: 1, routesImages: routesImages),
-          CustomGestureDetector(
-              routes: routes, index: 2, routesImages: routesImages),
-          CustomGestureDetector(
-              routes: routes, index: 3, routesImages: routesImages),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomGestureDetector extends StatelessWidget {
-  const CustomGestureDetector({
-    Key? key,
-    required this.routes,
-    required this.routesImages,
-    this.index,
-  }) : super(key: key);
-
-  final List<String> routes;
-  final List<String> routesImages;
-  final int? index;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GestureDetector(
-        onTap: () => Get.toNamed(routes[index!]),
-        child: CircleAvatar(
-          radius: 30,
-          backgroundColor: Colors.white,
-          backgroundImage: AssetImage(routesImages[index!]),
+  SizedBox clinicsRowWidgets() {
+    return SizedBox(
+      height: 100,
+      width: double.infinity,
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: routes.length,
         ),
+        itemCount: routes.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GestureDetector(
+              onTap: () => Get.toNamed(routes[index]),
+              child: CircleAvatar(
+                radius: 20,
+                backgroundImage: AssetImage(routesImages[index]),
+                backgroundColor: Colors.white,
+              ),
+            ),
+          );
+        },
       ),
     );
   }
