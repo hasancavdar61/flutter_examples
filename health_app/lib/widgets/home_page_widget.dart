@@ -98,7 +98,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
 class ClinicsRowWidgets extends StatelessWidget {
   ClinicsRowWidgets({
-    Key? key, this.selected,
+    Key? key,
+    this.selected,
   }) : super(key: key);
 
   final int? selected;
@@ -115,6 +116,7 @@ class ClinicsRowWidgets extends StatelessWidget {
     'assets/coronavius.png',
     'assets/heart.png'
   ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -122,19 +124,14 @@ class ClinicsRowWidgets extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         // ignore: prefer_const_literals_to_create_immutables
         children: [
-          ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: routesImages.length,
-            itemBuilder: (BuildContext context, int index) {
-              return CustomGestureDetector(
-                routes: routes,
-                routesImages: routesImages,
-                index: index,
-              );
-            },
-          ),
-          // ignore: prefer_const_constructors
+          CustomGestureDetector(
+              routes: routes, index: 1, routesImages: routesImages),
+          CustomGestureDetector(
+              routes: routes, index: 2, routesImages: routesImages),
+          CustomGestureDetector(
+              routes: routes, index: 3, routesImages: routesImages),
+          CustomGestureDetector(
+              routes: routes, index: 4, routesImages: routesImages),
         ],
       ),
     );
@@ -156,11 +153,11 @@ class CustomGestureDetector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed(routes[0]),
+      onTap: () => Get.toNamed(routes[index!]),
       child: CircleAvatar(
         radius: 30,
         backgroundColor: Colors.white,
-        backgroundImage: AssetImage(routesImages[0]),
+        backgroundImage: AssetImage(routesImages[index!]),
       ),
     );
   }
