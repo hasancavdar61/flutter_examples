@@ -31,6 +31,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 width: double.infinity,
               ),
             ),
+            ClinicsRowWidgets(),
             const ClinicTextWidget(),
 
             // ! BUİLDER İLE SARILACAK
@@ -97,32 +98,70 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
 class ClinicsRowWidgets extends StatelessWidget {
   ClinicsRowWidgets({
-    Key? key,
+    Key? key, this.selected,
   }) : super(key: key);
 
-  final List<String> routes = ['/DetailPage'];
-  final List<String> routesImages = ['assets/baby.png'];
+  final int? selected;
+
+  final List<String> routes = [
+    '/DetailPage',
+    '/DetailPageTwo',
+    '/DEtailPageThree',
+    '/DetailPageFour'
+  ];
+  final List<String> routesImages = [
+    'assets/baby.png',
+    'assets/brain.png',
+    'assets/coronavius.png',
+    'assets/heart.png'
+  ];
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      // ignore: prefer_const_literals_to_create_immutables
-      children: [
-        ListView.builder(
-          itemCount: routesImages.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GestureDetector(
-              onTap: () => Get.toNamed(routes[index]),
-              child: CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.white,
-                backgroundImage: AssetImage(routesImages[index]),
-              ),
-            );
-          },
-        ),
-        // ignore: prefer_const_constructors
-      ],
+    return SingleChildScrollView(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: routesImages.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CustomGestureDetector(
+                routes: routes,
+                routesImages: routesImages,
+                index: index,
+              );
+            },
+          ),
+          // ignore: prefer_const_constructors
+        ],
+      ),
+    );
+  }
+}
+
+class CustomGestureDetector extends StatelessWidget {
+  const CustomGestureDetector({
+    Key? key,
+    required this.routes,
+    required this.routesImages,
+    this.index,
+  }) : super(key: key);
+
+  final List<String> routes;
+  final List<String> routesImages;
+  final int? index;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () => Get.toNamed(routes[0]),
+      child: CircleAvatar(
+        radius: 30,
+        backgroundColor: Colors.white,
+        backgroundImage: AssetImage(routesImages[0]),
+      ),
     );
   }
 }
