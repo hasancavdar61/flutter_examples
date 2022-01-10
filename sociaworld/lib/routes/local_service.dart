@@ -7,6 +7,11 @@ import 'package:sociaworld/screens/splash/splash_variant_one/body.dart';
 import 'package:sociaworld/screens/splash/splash_variant_one/splash_screen.dart';
 import 'package:sociaworld/screens/splash/splash_variant_two/body.dart';
 import 'package:get/get.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_one/sub_rustem_one/sub_rustem_one.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_one/sub_rustem_one/sub_rustem_one_sec.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_one/sub_screen_one.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_three/sub_screen_three.dart';
+import 'package:sociaworld/screens/sub_screens/sub_screen_two/sub_screen_two.dart';
 
 class RouteServices {
   Map<String, WidgetBuilder> get routes => {
@@ -30,7 +35,7 @@ class NavShorts {
 }
 
 class GetRouteService {
-  get routesGett => {
+  get routesGett => [
         gettingRoutes('/', const CustomCardView()),
         gettingRoutes('/HomePage', const SplashScreenVariantOne()),
         gettingRoutes('/SplashSecond', const SecondScreen()),
@@ -42,7 +47,13 @@ class GetRouteService {
         gettingRoutes('/SplashVariantTwo', const VariantScreenTwo()),
         gettingRoutes('/SplashVariantThree', const VariantScreenThree()),
         gettingRoutes('/AIPage', const AIPage()),
-      };
+        GetPage(name: '/AIPage', page: () => const AIPage()),
+        GetPage(name: '/SubScreenOne', page: () => const SubScreenOne()),
+        GetPage(name: '/SubScreenTwo', page: () => const SubScreenTwo()),
+        GetPage(name: '/SubScreenThree', page: () => const SubScreenThree()),
+        GetPage(name: '/RustemScreenOne', page: () => const RustemScreenOne()),
+        GetPage(name: '/RustemScreenTwo', page: () => const RustemScreenTwo()),
+      ];
 
   GetPage<dynamic> gettingRoutes(String name, Widget pageGetter) => GetPage(
         name: name,
@@ -51,6 +62,5 @@ class GetRouteService {
 }
 
 GetPage<dynamic> routesGet() {
-  return GetPage(name: '/', page: ()=> const SecondScreen());
+  return GetPage(name: '/', page: () => const SecondScreen());
 }
-
