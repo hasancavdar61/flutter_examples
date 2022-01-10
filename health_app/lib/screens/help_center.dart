@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:health_app/widgets/custom_text_form_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class HelpCenter extends StatefulWidget {
-   HelpCenter({ Key? key, this.labelText, this.returnText }) : super(key: key);
-   
-   final String? labelText;
+  HelpCenter({Key? key, this.labelText, this.returnText}) : super(key: key);
+
+  final String? labelText;
   final String? returnText;
 
   @override
   _HelpCenterState createState() => _HelpCenterState();
-   final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   final controllerMail = TextEditingController();
   final controllerSubject = TextEditingController();
   final controllerMessage = TextEditingController();
@@ -66,6 +65,9 @@ class _HelpCenterState extends State<HelpCenter> {
                 },
                 label: const Text('Send E-Mail'),
               ),
+              IconButton(
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.cancel))
             ],
           ),
         ),

@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   var dataOne = Get.arguments;
   IconData? iconChanged = Icons.dark_mode;
   Color colorChanged = Colors.grey.shade200;
@@ -23,6 +24,8 @@ class _HomePageState extends State<HomePage> {
         drawer: const CustomDrawer(),
         backgroundColor: colorChanged,
         appBar: AppBar(
+          title: const Text("Health App"),
+          centerTitle: true,
           leading: IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () => _scaffoldKey.currentState?.openDrawer(),

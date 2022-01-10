@@ -9,7 +9,6 @@ class ClinicTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 25.0),
-      alignment: Alignment.centerLeft,
       height: MediaQuery.of(context).size.height / 12,
       width: double.infinity,
       color: Colors.grey.shade200,

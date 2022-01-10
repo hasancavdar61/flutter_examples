@@ -45,7 +45,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: const EdgeInsets.all(30),
         alignment: Alignment.center,
         child: ListView.builder(
           itemCount: profileCards.length,

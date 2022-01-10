@@ -19,8 +19,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            UserWelcomeWidget(geldi: widget.geldii),
+            UserWelcomeWidget(
+              geldi: widget.geldii,
+              checkUserName: true,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(14.0),
+              child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height / 12,
+                width: double.infinity,
+              ),
+            ),
             const ClinicTextWidget(),
+
+            // ! BUİLDER İLE SARILACAK
             ProfileCardOther(
               onTap: () => Get.toNamed('/DetailPage'),
               mainIcon: 'baby.png',
@@ -78,6 +91,38 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ClinicsRowWidgets extends StatelessWidget {
+  ClinicsRowWidgets({
+    Key? key,
+  }) : super(key: key);
+
+  final List<String> routes = ['/DetailPage'];
+  final List<String> routesImages = ['assets/baby.png'];
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      // ignore: prefer_const_literals_to_create_immutables
+      children: [
+        ListView.builder(
+          itemCount: routesImages.length,
+          itemBuilder: (BuildContext context, int index) {
+            return GestureDetector(
+              onTap: () => Get.toNamed(routes[index]),
+              child: CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage(routesImages[index]),
+              ),
+            );
+          },
+        ),
+        // ignore: prefer_const_constructors
+      ],
     );
   }
 }

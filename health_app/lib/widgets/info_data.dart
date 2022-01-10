@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 
 
-class InfoDataWidget extends StatelessWidget {
+
+/*class InfoDataWidget extends StatelessWidget {
   const InfoDataWidget({
     Key? key,
   }) : super(key: key);
@@ -22,4 +22,5 @@ class InfoDataWidget extends StatelessWidget {
     );
   }
 }
+*/
 
