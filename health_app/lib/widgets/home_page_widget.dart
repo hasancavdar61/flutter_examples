@@ -120,6 +120,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     );
   }
 
+<<<<<<< Updated upstream
   SizedBox clinicsRowWidgets() {
     return SizedBox(
       height: 100,
@@ -127,6 +128,72 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: routes.length,
+=======
+class ClinicsRowWidgets extends StatelessWidget {
+  ClinicsRowWidgets({
+    Key? key,
+    this.selected,
+  }) : super(key: key);
+
+  final int? selected;
+
+  final List<String> routes = [
+    '/DetailPage',
+    '/DetailPageTwo',
+    '/DetailPageThree',
+    '/DetailPageFour'
+  ];
+  final List<String> routesImages = [
+    'assets/baby.png',
+    'assets/brain.png',
+    'assets/coronavirus.png',
+    'assets/heart.png'
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // ignore: prefer_const_literals_to_create_immutables
+        children: [
+          CustomGestureDetector(
+              routes: routes, index: 0, routesImages: routesImages),
+          CustomGestureDetector(
+              routes: routes, index: 1, routesImages: routesImages),
+          CustomGestureDetector(
+              routes: routes, index: 2, routesImages: routesImages),
+          CustomGestureDetector(
+              routes: routes, index: 3, routesImages: routesImages),
+        ],
+      ),
+    );
+  }
+}
+
+class CustomGestureDetector extends StatelessWidget {
+  const CustomGestureDetector({
+    Key? key,
+    required this.routes,
+    required this.routesImages,
+    this.index,
+  }) : super(key: key);
+
+  final List<String> routes;
+  final List<String> routesImages;
+  final int? index;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () => Get.toNamed(routes[index!]),
+        child: CircleAvatar(
+          radius: 30,
+          backgroundColor: Colors.white,
+          backgroundImage: AssetImage(routesImages[index!]),
+>>>>>>> Stashed changes
         ),
         itemCount: routes.length,
         itemBuilder: (BuildContext context, int index) {
