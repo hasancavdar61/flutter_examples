@@ -5,12 +5,13 @@ import 'package:health_clinic/widgets/search_bar_widget.dart';
 import 'package:health_clinic/widgets/today_card_widget.dart';
 import 'package:health_clinic/widgets/top_doctor_widget.dart';
 
-
 class MainPageWidget extends StatelessWidget {
   const MainPageWidget({
     Key? key,
+    this.commonData,
   }) : super(key: key);
 
+  final String? commonData;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,7 +20,11 @@ class MainPageWidget extends StatelessWidget {
           children: [
             ///First widget in [Column]
             ///This Widget getting username and user avatar
-            const AboutUserWidget(),
+            ///[commonData] is dynamic data from [Get.arguments]
+            ///data from [MainPage]
+            AboutUserWidget(
+              commonData: commonData!,
+            ),
 
             ///Searching features in [SearchBarWidget]
             const SearchBarWidget(),
@@ -55,4 +60,3 @@ class MainPageWidget extends StatelessWidget {
     );
   }
 }
-

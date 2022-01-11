@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-
+import 'package:health_clinic/utils/static.dart';
 
 class AboutUserWidget extends StatelessWidget {
   const AboutUserWidget({
     Key? key,
+    this.commonData,
   }) : super(key: key);
+
+  final String? commonData;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +30,17 @@ class AboutUserWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline4),
                 const TextSpan(text: '\n'),
                 TextSpan(
-                    text: 'Esra Malkoç ✌️',
+                    text: '$commonData ✌️',
                     style: Theme.of(context).textTheme.headline3),
               ],
             ),
           ),
-          const CircleAvatar(
+          CircleAvatar(
             backgroundColor: Colors.deepPurple,
+            backgroundImage: AssetImage(docAvatar[0]),
           )
         ],
       ),
     );
   }
 }
-
-

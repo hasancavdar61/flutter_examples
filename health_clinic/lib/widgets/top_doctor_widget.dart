@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:health_clinic/utils/static.dart';
 
-
-class TopDoctorWidget extends StatelessWidget {
+class TopDoctorWidget extends StatefulWidget {
   const TopDoctorWidget({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<TopDoctorWidget> createState() => _TopDoctorWidgetState();
+}
+
+class _TopDoctorWidgetState extends State<TopDoctorWidget> {
   @override
   Widget build(BuildContext context) {
     ///Parent widget [Container] height is [MediaQuery]
@@ -29,23 +34,31 @@ class TopDoctorWidget extends StatelessWidget {
                 child:
 
                     ///[Material] widget for [elevation] set 2.
-                    Material(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
-                  ),
-                  elevation: 2,
+                    GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      Get.toNamed(routeNames[index]);
+                    });
+                  },
+                  child: Material(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(15),
+                    ),
+                    elevation: 2,
 
-                  ///[ListTile] parameters is dynamic from [List].
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: docColor[index],
-                    ),
-                    title: Text(
-                      docLabel[index],
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
-                    subtitle: Text(
-                      docSubLabel[index],
+                    ///[ListTile] parameters is dynamic from [List].
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: docColor[index],
+                        backgroundImage: AssetImage(docAvatar[index])
+                      ),
+                      title: Text(
+                        docLabel[index],
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                      subtitle: Text(
+                        docSubLabel[index],
+                      ),
                     ),
                   ),
                 ),
@@ -57,4 +70,3 @@ class TopDoctorWidget extends StatelessWidget {
     );
   }
 }
-

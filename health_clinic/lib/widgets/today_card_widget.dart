@@ -49,9 +49,11 @@ class TodayCardWidget extends StatelessWidget {
             ),
             child: Column(
               children: [
+                ///Avatar here
                 ListTile(
                   leading: CircleAvatar(
                     backgroundColor: docColor.first,
+                    backgroundImage: AssetImage(docAvatar[0]),
                   ),
                   title: Text(
                     docLabel.first,
