@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:health_clinic/widgets/about_widget_user_widget.dart';
+import 'package:health_clinic/widgets/booking_card_widget.dart';
 import 'package:health_clinic/widgets/category_widget.dart';
 import 'package:health_clinic/widgets/search_bar_widget.dart';
-import 'package:health_clinic/widgets/today_card_widget.dart';
+import 'package:health_clinic/widgets/today_text_widget.dart';
 import 'package:health_clinic/widgets/top_doctor_widget.dart';
 
 class MainPageWidget extends StatelessWidget {
@@ -36,7 +37,11 @@ class MainPageWidget extends StatelessWidget {
 
             /// This widget has dynamic data come from [List]
             /// And this widget inside [Container], [Row], [Text],
-            const TodayCardWidget(),
+            const TodayTextWidget(),
+
+            ///Booking doctor details in [BookingCard] widget
+            ///Slider info is here
+            const BookingCard(),
 
             /// This widget in text 'Top Doctor' [Text] widget.
             Container(
@@ -53,7 +58,7 @@ class MainPageWidget extends StatelessWidget {
             ///Padding gives with [Padding] widget.
             ///Elevation gives [Material] widgets' [elevation] property.
             ///Screen widget is [ListTile] datas comeing from local [List].
-            const TopDoctorWidget()
+            const TopDoctorWidget(),
           ],
         ),
       ),

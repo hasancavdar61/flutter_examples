@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:health_clinic/utils/static.dart';
 
 class DoctorDetail extends StatefulWidget {
-  DoctorDetail({Key? key}) : super(key: key);
+  const DoctorDetail({Key? key}) : super(key: key);
 
   @override
   _DoctorDetailState createState() => _DoctorDetailState();
@@ -35,19 +35,18 @@ class _DoctorDetailState extends State<DoctorDetail> {
           ),
         ),
       ),
-      body: 
-      ///Parent widget [SingleChildScrollView]
-      SingleChildScrollView(
+      body:
+
+          ///Parent widget [SingleChildScrollView]
+          SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
-            ///Stacking [Material] widget 
+            ///Stacking [Material] widget
             Stack(
               alignment: AlignmentDirectional.center,
               children: [
-
                 ///This widget has a [AppBar]
                 Container(
                   alignment: Alignment.center,
@@ -64,7 +63,7 @@ class _DoctorDetailState extends State<DoctorDetail> {
                     backgroundColor: Colors.transparent,
                   ),
                 ),
-                
+
                 ///Positioning with [Positioned] [ListTile]
                 Positioned(
                   left: 0,
@@ -102,15 +101,17 @@ class _DoctorDetailState extends State<DoctorDetail> {
             Container(
               padding: const EdgeInsets.all(6.0),
               height: MediaQuery.of(context).size.height / 6,
-              child:  Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  buildContainer('Patients', '100+', context),
-                  buildContainer('Experiences', '10 Years', context),
-                  buildContainer('Ratings', '4.0', context),
+                  _buildContainer('Patients', '100+', context),
+                  _buildContainer('Experiences', '10 Years', context),
+                  _buildContainer('Ratings', '4.0', context),
                 ],
               ),
             ),
+
+            ///About Doctor [TextSpan] datas come from [List]
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: RichText(
@@ -129,6 +130,8 @@ class _DoctorDetailState extends State<DoctorDetail> {
                 ),
               ),
             ),
+
+            ///Location [Text] and map image in [Container] [AssetImage]
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
@@ -137,10 +140,12 @@ class _DoctorDetailState extends State<DoctorDetail> {
               ),
             ),
             Container(
+              margin: const EdgeInsets.only(bottom: 10.0),
               height: MediaQuery.of(context).size.height / 3,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
                 image: const DecorationImage(
+                  //Image root here.
                   image: AssetImage('assets/map.png'),
                 ),
               ),
@@ -152,7 +157,9 @@ class _DoctorDetailState extends State<DoctorDetail> {
   }
 }
 
-buildContainer(String label, String subLabel, BuildContext context) {
+///[_buildcontainer] for [dynamic] widget
+
+_buildContainer(String label, String subLabel, BuildContext context) {
   return Container(
     width: 90,
     height: 90,

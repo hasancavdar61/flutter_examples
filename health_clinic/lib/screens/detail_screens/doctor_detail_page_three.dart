@@ -3,7 +3,7 @@ import 'package:health_clinic/utils/static.dart';
 
 
 class DoctorDetailThree extends StatefulWidget {
-  DoctorDetailThree ({Key? key}) : super(key: key);
+  const DoctorDetailThree ({Key? key}) : super(key: key);
 
   @override
   _DoctorDetailThreeState createState() => _DoctorDetailThreeState();

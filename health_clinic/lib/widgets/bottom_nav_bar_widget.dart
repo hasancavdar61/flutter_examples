@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class BottomBarWithItems extends StatelessWidget {
   const BottomBarWithItems({
     Key? key,

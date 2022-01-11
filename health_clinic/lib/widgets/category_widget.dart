@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_clinic/utils/static.dart';
 
-
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({
     Key? key,
@@ -14,7 +13,7 @@ class CategoryWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(8.0),
       width: double.infinity,
-      height: MediaQuery.of(context).size.height / 10,
+      height: MediaQuery.of(context).size.height / 8,
       child: GridView.builder(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
@@ -34,6 +33,7 @@ class CategoryWidget extends StatelessWidget {
                 categoryData[index],
                 style: Theme.of(context).textTheme.headline6,
               ),
+              
             ],
           );
         },
@@ -41,4 +41,3 @@ class CategoryWidget extends StatelessWidget {
     );
   }
 }
-

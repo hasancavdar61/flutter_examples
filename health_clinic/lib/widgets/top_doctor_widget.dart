@@ -18,7 +18,7 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
     ///[child] is [ListView.builder]
     return Container(
       padding: const EdgeInsets.all(20.0),
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 2,
       child:
 
           ///Dynamic widgets create with [ListView.builder]
@@ -49,9 +49,8 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
                     ///[ListTile] parameters is dynamic from [List].
                     child: ListTile(
                       leading: CircleAvatar(
-                        backgroundColor: docColor[index],
-                        backgroundImage: AssetImage(docAvatar[index])
-                      ),
+                          backgroundColor: docColor[index],
+                          backgroundImage: AssetImage(docAvatar[index])),
                       title: Text(
                         docLabel[index],
                         style: Theme.of(context).textTheme.headline5,
@@ -62,6 +61,9 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
                     ),
                   ),
                 ),
+              ),
+              Divider(
+                color: Colors.black.withOpacity(0.3),
               )
             ],
           );
