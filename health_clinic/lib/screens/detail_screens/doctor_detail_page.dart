@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:health_clinic/utils/static.dart';
 
 class DoctorDetail extends StatefulWidget {
@@ -9,6 +10,11 @@ class DoctorDetail extends StatefulWidget {
 }
 
 class _DoctorDetailState extends State<DoctorDetail> {
+  ///Common datas read with [Get.arguments] method.
+  var commonDocAvatar = Get.arguments[0];
+  var commonDocLabel = Get.arguments[1];
+  var commonDocSubLabel = Get.arguments[2];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,15 +86,15 @@ class _DoctorDetailState extends State<DoctorDetail> {
                       ///[ListTile] parameters is dynamic from [List].
                       child: ListTile(
                         title: Text(
-                          docLabel.first,
+                          commonDocLabel,
                           style: Theme.of(context).textTheme.headline5,
                         ),
                         subtitle: Text(
-                          docSubLabel.first,
+                          commonDocSubLabel,
                         ),
                         trailing: CircleAvatar(
                           backgroundColor: docColor.first,
-                          backgroundImage: AssetImage(docAvatar.first),
+                          backgroundImage: AssetImage(commonDocAvatar),
                         ),
                       ),
                     ),

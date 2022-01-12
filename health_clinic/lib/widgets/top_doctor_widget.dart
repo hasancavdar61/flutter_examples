@@ -36,9 +36,13 @@ class _TopDoctorWidgetState extends State<TopDoctorWidget> {
                     ///[Material] widget for [elevation] set 2.
                     GestureDetector(
                   onTap: () {
-                    setState(() {
-                      Get.toNamed(routeNames[index]);
-                    });
+
+                    ///[Get.toNamed] method and pass data with [Get.arguments]
+                    Get.toNamed('/DoctorDetail', arguments: [
+                      docAvatar[index],
+                      docLabel[index],
+                      docSubLabel[index]
+                    ]);
                   },
                   child: Material(
                     borderRadius: const BorderRadius.all(

@@ -41,17 +41,17 @@ class AboutUserWidget extends StatelessWidget {
                   context: context,
                   builder: (_) {
                     return AlertDialog(
-                      title: Text('Dou you want Exit?'),
+                      title: const Text('Dou you want Exit?'),
                       actions: [
                         TextButton(
                           onPressed: () =>
                               Navigator.pop(context, false), // passing false
-                          child: Text('No'),
+                          child: const Text('No'),
                         ),
                         TextButton(
                           onPressed: () =>
                               Navigator.pop(context, true), // passing true
-                          child: Text('Yes'),
+                          child: const Text('Yes'),
                         ),
                       ],
                     );
